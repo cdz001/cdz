@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>group</groupId>
+		<artifactId>cdz</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<packaging>jar</packaging>
+	
+	<groupId>group</groupId>
+	<artifactId>cdz-service-impl</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>cdz-service-impl</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>group</groupId>
+			<artifactId>cdz-beans</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>group</groupId>
+			<artifactId>cdz-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>group</groupId>
+			<artifactId>cdz-utils</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>group</groupId>
+			<artifactId>cdz-iservice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${cmos.core-finalName}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+				<configuration>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

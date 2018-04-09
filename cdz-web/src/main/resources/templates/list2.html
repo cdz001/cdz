@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>用户列表</title>
+<link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}"/>
+
+
+</head>
+<body>
+	<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+            </tr>
+        </thead>
+    </table>
+   <script type="text/javascript" th:src="@{/js/jquery-1.12.4.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery1.dataTables.min.js}"></script>
+<script>
+$(document).ready(function() {
+	
+	
+    $('#example').DataTable( {
+        "bServerSide":true,
+        'ordering':true,
+        "stripeClasses": ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
+        "pagingType": "full_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
+        "autoWidth" : true,//自动计算宽度 
+        ajax:{
+        	url: "/page",  
+            data : function(data) {  
+                for (var i = 0; i < data.columns.length; i++) {  
+                    column = data.columns[i];  
+                    console.log(column);
+                    column.searchRegex = column.search.regex;  
+                    column.searchValue = column.search.value;  
+                    delete(column.search);  
+                }  
+            }  
+        },
+        "columns": [
+            { "data": "username" },
+            { "data": "password" }
+        ]
+    } );
+} );
+</script>
+</body>
+</html>

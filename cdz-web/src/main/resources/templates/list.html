@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>用户列表</title>
+<link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}"/>
+
+
+</head>
+<body>
+	<table id="example" class="display table-striped table-bordered table-hover table-condensed" cellspacing="0" width="100%">
+            <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>姓名</th>
+                        </tr>
+                        </thead>
+   </table>
+   <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script>
+$(function () {
+    //提示信息  初始化设置 一般不需要改
+     var lang = {
+            "sProcessing": "处理中...",
+            "sLengthMenu": "每页 _MENU_ 项",
+            "sZeroRecords": "没有匹配结果",
+            "sInfo": "当前显示第 _START_ 至 _END_ 项，共 _TOTAL_ 项。",
+            "sInfoEmpty": "当前显示第 0 至 0 项，共 0 项",
+            "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+            "sInfoPostFix": "",
+            "sSearch": "搜索:",
+            "sUrl": "",
+            "sEmptyTable": "表中数据为空",
+            "sLoadingRecords": "载入中...",
+            "sInfoThousands": ",",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上页",
+                "sNext": "下页",
+                "sLast": "末页",
+                "sJump": "跳转"
+            },
+            "oAria": {
+                "sSortAscending": ": 以升序排列此列",
+                "sSortDescending": ": 以降序排列此列"
+            }
+        };
+var table = $("#example").DataTable({
+	language:lang,  //提示信息
+    serverSide:true,
+    paging : true,//是否分页
+    ordering : false,//是否允许用户排序 
+    searching: false,  //禁用原生搜索
+    orderMulti: false,  //启用多列排序
+    stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
+    pagingType: "full_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
+    autoWidth : true,//自动计算宽度 
+    ajax:{
+        url:"/page",
+        dataSrc:function(result){
+            return result.data;
+        }
+    },
+    columns:[
+        {data:"username"},
+        {data:"password"}
+    ]
+});
+
+//初始化完成，添加行号
+table.on('order.dt search.dt',function() {
+    table.column(1, {
+        search: 'applied',
+        order: 'applied'
+    }).nodes().each(function(cell, i) {
+        cell.innerHTML = i + 1;
+    });
+}).draw();
+} );
+</script>
+</body>
+</html>

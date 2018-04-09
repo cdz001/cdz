@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+</head>
+<body>
+	<form id="signupForm1">
+		<input type="hidden" name="id" />
+		<input type="text" name="username" /><br>
+		<input type="text" name="password" /><br>
+		<input type="button" id="submit" value="submit" />
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#submit").click(function() {
+				var formdata = {  
+	                    "id" : $("input[name='id']").val(),  
+	                    "username" : $("input[name='username']").val(),  
+	                    "password" : $("input[name='password']").val() 
+	                };  
+				
+				//获取表单数据，并序列化
+			    var formData = $("#signupForm1").serializeArray();
+
+			    //将序列化数据转为对象
+			    var formObject = {};
+			    for (var item in formData) {
+			        formObject[formData[item].name] = formData[item].value;
+			    }
+			    var formJSON = JSON.stringify(formObject);
+				console.log(formJSON);
+				$.ajax({
+					type : "POST",
+					url : "/add",
+					contentType: "application/json", 
+					data : formJSON,// 你的formid
+					success : function(r) {
+						if (r == '1') {
+							window.location.href = '/hello';
+						}
+					}
+				});
+			});
+
+		});
+	</script>
+</body>
+
+</html>
