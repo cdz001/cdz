@@ -1,15 +1,19 @@
 package org.cdz.web.controller;
 
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.cdz.iservice.UserService;
 import org.cdz.utils.DataTablePageUtil;
 import org.cdz.utils.Page;
+import org.cdz.web.log.Logg;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,7 +57,7 @@ public class HelloController {
 
 		return user;
 	}
-	
+	@Logg("执行了page方法")
 	@RequestMapping(value = "/page",method=RequestMethod.GET)
 	@ResponseBody
 	public DataTablePageUtil<User> getUserByPage(HttpServletRequest request) {
@@ -72,12 +76,33 @@ public class HelloController {
 		return dataTable;
 	}
 	
+	@Logg("执行了page2方法")
+//	@RequestMapping(value = "/page2/{pageSize}/{pageNumber}",method=RequestMethod.GET)
 	@RequestMapping(value = "/page2",method=RequestMethod.GET)
 	@ResponseBody
 	public Page<User> getUserByPage2(HttpServletRequest request) {
-		Integer pageSize = Integer.parseInt(request.getParameter("pageSize"));  
-		Integer pageNumber = Integer.parseInt(request.getParameter("pageNumber")); 
-		PageInfo<User> pageInfo = userService.findItemByPage(pageNumber,pageSize) ;
+//		public Page<User> getUserByPage2(HttpServletRequest request,HttpServletResponse httpResponse,@PathVariable String pageSize,@PathVariable String pageNumber) {
+//		 Enumeration enu=request.getParameterNames();
+//	        while(enu.hasMoreElements()){
+//	        String paraName=(String)enu.nextElement();
+//	        System.out.println(paraName+": "+request.getParameter(paraName));
+//	        } 
+//		 Enumeration headerNames = request.getHeaderNames();
+//		    while (headerNames.hasMoreElements()) {
+//		        String key = (String) headerNames.nextElement();
+//		        String value = request.getHeader(key);
+//		        System.out.println(key+" "+value);
+//		    }
+//		    
+//		    System.out.println("****************************");
+//		    
+//		    String originHeader = request.getHeader("Origin");
+//		    System.out.println("originHeader="+originHeader);
+//		    System.out.println(pageSize+" "+pageNumber);
+		    
+		Integer pageSize1 = Integer.parseInt(request.getParameter("pageSize"));  
+		Integer pageNumber1 = Integer.parseInt(request.getParameter("pageNumber")); 
+		PageInfo<User> pageInfo = userService.findItemByPage(pageNumber1,pageSize1) ;
 //		logger.info(user.size()+"****************");
 //		for (User u : user) {
 //			System.out.println("user.getName():" + u.getUsername());
@@ -91,6 +116,7 @@ public class HelloController {
 		return p;
 	}
 	
+	@Logg("执行了Hello方法")
 	@RequestMapping(value = "/hello")
     public String helloGet(Map<String, Object> map) {
 		map.put("name", "jetty");

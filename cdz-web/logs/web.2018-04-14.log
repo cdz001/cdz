@@ -1,0 +1,95 @@
+[WARN ][2018/04/14 01:12:09506][org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1111)]
+Client session timed out, have not heard from server in 27974717ms for sessionid 0x162b9f498800018
+[INFO ][2018/04/14 01:12:09564][org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1159)]
+Client session timed out, have not heard from server in 27974717ms for sessionid 0x162b9f498800018, closing socket connection and attempting reconnect
+[INFO ][2018/04/14 01:12:10719][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1035)]
+Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][2018/04/14 01:12:10720][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:877)]
+Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+[INFO ][2018/04/14 01:12:12549][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (Disconnected)
+[WARN ][2018/04/14 01:12:12582][org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:140)]
+Connected to an old server; r-o mode will be unavailable
+[WARN ][2018/04/14 01:12:12583][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1288)]
+Unable to reconnect to ZooKeeper service, session 0x162b9f498800018 has expired
+[INFO ][2018/04/14 01:12:12583][org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1157)]
+Unable to reconnect to ZooKeeper service, session 0x162b9f498800018 has expired, closing socket connection
+[INFO ][2018/04/14 01:12:12583][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (Expired)
+[INFO ][2018/04/14 01:12:12584][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:441)]
+Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@37ddc2c
+[INFO ][2018/04/14 01:12:12599][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1035)]
+Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][2018/04/14 01:12:12599][com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:297)]
+ [DUBBO] Recover register url [consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=consumers&check=false&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=consumers&check=false&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:12599][com.alibaba.dubbo.registry.support.FailbackRegistry.recover(FailbackRegistry.java:307)]
+ [DUBBO] Recover subscribe url [consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:12599][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:877)]
+Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+[INFO ][2018/04/14 01:12:12612][org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:520)]
+EventThread shut down for session: 0x162b9f498800018
+[INFO ][2018/04/14 01:12:14547][com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:324)]
+ [DUBBO] Retry register [consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=consumers&check=false&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=consumers&check=false&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[WARN ][2018/04/14 01:12:18259][org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:140)]
+Connected to an old server; r-o mode will be unavailable
+[INFO ][2018/04/14 01:12:18260][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1302)]
+Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x162b9f498800019, negotiated timeout = 30000
+[INFO ][2018/04/14 01:12:18276][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+[INFO ][2018/04/14 01:12:18281][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, urls: [empty://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=configurators&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:20734][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, urls: [empty://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:23812][com.alibaba.dubbo.registry.support.FailbackRegistry.retry(FailbackRegistry.java:369)]
+ [DUBBO] Retry subscribe {consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366=[com.alibaba.dubbo.registry.integration.RegistryDirectory@178f268a], consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595=[com.alibaba.dubbo.registry.integration.RegistryDirectory@6c9320c2]}, dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:23817][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, urls: [empty://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366], dubbo version: 2.6.0, current host: 192.168.191.3
+[WARN ][2018/04/14 01:12:44366][org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1111)]
+Client session timed out, have not heard from server in 20000ms for sessionid 0x162b9f498800019
+[INFO ][2018/04/14 01:12:44366][org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1159)]
+Client session timed out, have not heard from server in 20000ms for sessionid 0x162b9f498800019, closing socket connection and attempting reconnect
+[INFO ][2018/04/14 01:12:44467][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+[INFO ][2018/04/14 01:12:44468][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+[INFO ][2018/04/14 01:12:44469][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (Disconnected)
+[INFO ][2018/04/14 01:12:45598][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:1035)]
+Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[INFO ][2018/04/14 01:12:45598][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:877)]
+Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+[WARN ][2018/04/14 01:12:50821][org.apache.zookeeper.ClientCnxnSocket.readConnectResult(ClientCnxnSocket.java:140)]
+Connected to an old server; r-o mode will be unavailable
+[INFO ][2018/04/14 01:12:50821][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1302)]
+Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x162b9f498800019, negotiated timeout = 30000
+[INFO ][2018/04/14 01:12:50821][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+[INFO ][2018/04/14 01:12:53377][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595, urls: [dubbo://192.168.191.3:20880/org.cdz.iservice.UserService?anyhost=true&application=chargestation-provider&dubbo=2.6.0&generic=false&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13352&side=provider&timestamp=1523583117752], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:56436][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595, urls: [empty://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=configurators&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:56449][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595, urls: [empty://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:57187][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, urls: [dubbo://192.168.191.3:20880/org.cdz.iservice.LoginService?anyhost=true&application=chargestation-provider&dubbo=2.6.0&generic=false&interface=org.cdz.iservice.LoginService&methods=list&pid=13352&side=provider&timestamp=1523583116286], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:12:57189][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, urls: [dubbo://192.168.191.3:20880/org.cdz.iservice.LoginService?anyhost=true&application=chargestation-provider&dubbo=2.6.0&generic=false&interface=org.cdz.iservice.LoginService&methods=list&pid=13352&side=provider&timestamp=1523583116286, empty://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=configurators&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366, empty://192.168.191.3/org.cdz.iservice.LoginService?application=chargestation-consumer&category=routers&dubbo=2.6.0&interface=org.cdz.iservice.LoginService&methods=list&pid=13200&side=consumer&timestamp=1523583357366], dubbo version: 2.6.0, current host: 192.168.191.3
+[INFO ][2018/04/14 01:13:00188][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:383)]
+ [DUBBO] Notify urls for subscribe url consumer://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=providers,configurators,routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595, urls: [dubbo://192.168.191.3:20880/org.cdz.iservice.UserService?anyhost=true&application=chargestation-provider&dubbo=2.6.0&generic=false&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13352&side=provider&timestamp=1523583117752, empty://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=configurators&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595, empty://192.168.191.3/org.cdz.iservice.UserService?application=chargestation-consumer&category=routers&dubbo=2.6.0&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&side=consumer&timestamp=1523583355595], dubbo version: 2.6.0, current host: 192.168.191.3
+[WARN ][2018/04/14 01:15:24323][com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:170)]
+ [DUBBO] client reconnect to 192.168.191.3:20880 find error . url: dubbo://192.168.191.3:20880/org.cdz.iservice.UserService?anyhost=true&application=chargestation-consumer&check=false&codec=dubbo&dubbo=2.6.0&generic=false&heartbeat=60000&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&register.ip=192.168.191.3&remote.timestamp=1523583117752&side=consumer&timestamp=1523583355595, dubbo version: 2.6.0, current host: 192.168.191.3
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://192.168.191.3:20880/org.cdz.iservice.UserService?anyhost=true&application=chargestation-consumer&check=false&codec=dubbo&dubbo=2.6.0&generic=false&heartbeat=60000&interface=org.cdz.iservice.UserService&methods=add,batchRemove,getUserInfoByName,findItemByPage,get,update,list,getUserInfo,remove&pid=13200&register.ip=192.168.191.3&remote.timestamp=1523583117752&side=consumer&timestamp=1523583355595) failed to connect to server /192.168.191.3:20880, error message is:connection timed out
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:122)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:266)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:155)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283)
+	... 3 more

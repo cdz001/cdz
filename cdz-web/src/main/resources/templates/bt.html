@@ -5,15 +5,23 @@
 <title>Insert title here</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 <link rel="stylesheet" th:href="@{/css/bootstrap-table.min.css}" />
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" />
 <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
 <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/bootstrap-table.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/bootstrap-table-zh-CN.js}"></script>
+<script type="text/javascript" th:src="@{/layui/layui.all.js}"></script>
 </head>
 <body>
+
 	<div style="margin-left: 30%;margin-top:20px; height: 10%; width: 60%;">
 		<a class="btn active" href="#" onclick="batchRemove()">批量刪除</a>
 		<a class="btn active" href="#" onclick="add()">增加</a>
+		<form id="searchForm">
+			username:<input type="text" id="username_search" value=""/><br>
+			<input type="button" value="search" onclick="search()"/>
+			<input type="reset" value="reset"/>
+		</form>
 	</div>
 	<div style="margin-left: 30%; height: 50%; width: 60%;">
 		<table id="example1"></table>
@@ -36,8 +44,9 @@
 				striped : true, //是否显示行间隔色
 				cache : false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
 				pagination : true, //是否显示分页（*）
-				sortable : false, //是否启用排序
-				sortOrder : "asc", //排序方式
+				sortable : true, //是否启用排序
+				sortOrder : "desc", //排序方式
+				sortName:"id",
 				queryParams : oTableInit.queryParams,//传递参数（*）
 				sidePagination : "server", //分页方式：client客户端分页，server服务端分页（*）
 				pageNumber : 1, //初始化加载第一页，默认第一页
@@ -61,13 +70,16 @@
 					checkbox : true
 				}, {
 					field : 'id',
-					title : 'ID'
+					title : 'ID',
+					sortable: true
 				}, {
 					field : 'username',
-					title : '名字'
+					title : '名字',
+					sortable: true
 				}, {
 					field : 'password',
-					title : '性别'
+					title : '性别',
+					sortable: true
 				}, {
 					field : 'operate',
 					title : '操作',
@@ -75,12 +87,12 @@
 				//自定义方法，添加操作按钮
 				}, ],
 				rowStyle : function(row, index) {
-					var classesArr = [ 'success', 'info' ];
+					var classesArr = [ 'active', 'success', 'info', 'warning', 'danger' ];
 					var strclass = "";
 					if (index % 2 === 0) {//偶数行
-						strclass = classesArr[0];
+						strclass = classesArr[2];
 					} else {//奇数行
-						strclass = classesArr[1];
+						strclass = classesArr[0];
 					}
 					return {
 						classes : strclass
@@ -92,12 +104,20 @@
 
 		//得到查询的参数
 		oTableInit.queryParams = function(params) {
+			console.log(params);
+			var sss = $("#username_search").val();
 			var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
 				pageSize : params.pageSize, //页面大小  
 				pageNumber : params.pageNumber, //页码
+				sort: params.sort,      //排序列名  
+				sortName:params.sortName,
+                sortOrder: params.order, //排位命令（desc，asc）
+                name:sss
 			};
+			console.log(temp);
 			return temp;
 		};
+		
 		return oTableInit;
 	};
 
@@ -105,6 +125,10 @@
 		return [ '<a class="btn active" href="#" onclick="edit('+row.id+')">编辑</a>',
 				'<a class="btn active" href="#" onclick="remove('+row.id+')">删除</a>' ].join('');
 	}
+	
+	function search() {
+		$('#example1').bootstrapTable('refresh');
+    }
 	
 	function remove(id){
 			$.ajax({
@@ -124,7 +148,15 @@
 	}
 	
 	function add(){
-		window.location.href="/preAdd";
+		layer.open({
+			  type: 2, 
+			  content: '/preAdd', //这里content是一个普通的String
+			  title : '用户增加',
+			  maxmin : true,
+			  shadeClose : false, // 点击遮罩关闭层
+			  area : [ '800px', '520px' ],
+			});
+		
 	}
 	
 	function batchRemove(){
